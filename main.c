@@ -1,40 +1,58 @@
 #include <stdio.h>
 
-int main()
+#define ROWS 10
+#define COLS 20
+
+void initCanvas(char canvas[ROWS][COLS])
 {
-    int rows = 10;
-    int cols = 20;
-
-    char canvas[10][20];
-
-    // Fill canvas with '_'
-    for(int i = 0; i < rows; i++)
+    for(int i = 0; i < ROWS; i++)
     {
-        for(int j = 0; j < cols; j++)
+        for(int j = 0; j < COLS; j++)
         {
             canvas[i][j] = '_';
         }
     }
-    for(int j=2;j<=15;j++)
+}
 
+void drawHLine(char canvas[ROWS][COLS], int row, int start, int end)
+{
+    for(int j = start; j <= end; j++)
     {
-        canvas[3][j]='*';
+        canvas[row][j] = '*';
     }
+}
 
-    for(int i=2;i<=9;i++)
+void drawVLine(char canvas[ROWS][COLS], int col, int start, int end)
+{
+    for(int i = start; i <= end; i++)
     {
-        canvas[i][3]='*';
+        canvas[i][col] = '*';
     }
-    
-    // Display canvas
-    for(int i = 0; i < rows; i++)
+}
+
+void display(char canvas[ROWS][COLS])
+{
+    for(int i = 0; i < ROWS; i++)
     {
-        for(int j = 0; j < cols; j++)
+        for(int j = 0; j < COLS; j++)
         {
             printf("%c", canvas[i][j]);
         }
         printf("\n");
     }
+}
+
+
+int main()
+{
+    char canvas[ROWS][COLS];
+
+    initCanvas(canvas);
+
+    drawHLine(canvas, 3, 2, 15);
+    drawVLine(canvas, 3, 2, 9);
+
+    display(canvas);
 
     return 0;
 }
