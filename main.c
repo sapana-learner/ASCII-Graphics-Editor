@@ -30,6 +30,25 @@ void drawVLine(char canvas[ROWS][COLS], int col, int start, int end)
     }
 }
 
+void drawRectangle(char canvas[ROWS][COLS], int r, int c, int height, int width)
+{
+    // top line
+    for(int j = c; j < c + width; j++)
+        canvas[r][j] = '*';
+
+    // bottom line
+    for(int j = c; j < c + width; j++)
+        canvas[r + height][j] = '*';
+
+    // left line
+    for(int i = r; i < r + height; i++)
+        canvas[i][c] = '*';
+
+    // right line
+    for(int i = r; i < r + height; i++)
+        canvas[i][c + width] = '*';
+}
+
 void display(char canvas[ROWS][COLS])
 {
     for(int i = 0; i < ROWS; i++)
@@ -49,8 +68,13 @@ int main()
 
     initCanvas(canvas);
 
-    drawHLine(canvas, 3, 2, 15);
-    drawVLine(canvas, 3, 2, 9);
+    //drawHLine(canvas, 3, 2, 15);
+    //drawVLine(canvas, 3, 2, 9);
+    
+
+    drawRectangle(canvas, 2, 5, 5, 10);
+
+
 
     display(canvas);
 
