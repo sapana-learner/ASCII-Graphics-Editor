@@ -76,19 +76,37 @@ void display(char canvas[ROWS][COLS])
 int main()
 {
     char canvas[ROWS][COLS];
+    int choice;
 
     initCanvas(canvas);
 
-    //drawHLine(canvas, 3, 2, 15);
-    //drawVLine(canvas, 3, 2, 9);
-    
+    while(1)
+    {
+        printf("\n1. Draw Rectangle\n");
+        printf("2. Fill Rectangle\n");
+        printf("3. Display Canvas\n");
+        printf("4. Exit\n");
 
-    drawRectangle(canvas, 2, 5, 5, 10);
-    fillRectangle(canvas,2,5,5,10);
+        printf("Enter choice: ");
+        scanf("%d", &choice);
 
-
-
-    display(canvas);
+        if(choice == 1)
+        {
+            drawRectangle(canvas, 2, 5, 5, 10);
+        }
+        else if(choice == 2)
+        {
+            fillRectangle(canvas, 2, 5, 5, 10);
+        }
+        else if(choice == 3)
+        {
+            display(canvas);
+        }
+        else if(choice == 4)
+        {
+            break;
+        }
+    }
 
     return 0;
 }
