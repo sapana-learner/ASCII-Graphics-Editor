@@ -49,6 +49,17 @@ void drawRectangle(char canvas[ROWS][COLS], int r, int c, int height, int width)
         canvas[i][c + width] = '*';
 }
 
+void fillRectangle(char canvas[ROWS][COLS], int r, int c, int height, int width)
+{
+    for(int i = r; i < r + height; i++)
+    {
+        for(int j = c; j < c + width; j++)
+        {
+            canvas[i][j] = '*';
+        }
+    }
+}
+
 void display(char canvas[ROWS][COLS])
 {
     for(int i = 0; i < ROWS; i++)
@@ -73,6 +84,7 @@ int main()
     
 
     drawRectangle(canvas, 2, 5, 5, 10);
+    fillRectangle(canvas,2,5,5,10);
 
 
 
