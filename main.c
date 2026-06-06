@@ -60,6 +60,17 @@ void fillRectangle(char canvas[ROWS][COLS], int r, int c, int height, int width)
     }
 }
 
+void drawTriangle(char canvas[ROWS][COLS], int r, int c, int height)
+{
+    for(int i = 0; i < height; i++)
+    {
+        for(int j = 0; j <= i; j++)
+        {
+            canvas[r + i][c + j] = '*';
+        }
+    }
+}
+
 void display(char canvas[ROWS][COLS])
 {
     for(int i = 0; i < ROWS; i++)
@@ -84,29 +95,64 @@ int main()
     {
         printf("\n1. Draw Rectangle\n");
         printf("2. Fill Rectangle\n");
-        printf("3. Display Canvas\n");
-        printf("4. Exit\n");
+        printf("3. Draw Triangle\n");
+        printf("4. Display Canvas\n");
+        printf("5. Exit\n");
 
         printf("Enter choice: ");
         scanf("%d", &choice);
 
-        if(choice == 1)
-        {
-            drawRectangle(canvas, 2, 5, 5, 10);
-        }
+ if(choice == 1)
+{
+    int r, c, h, w;
+
+    printf("Row: ");
+    scanf("%d", &r);
+
+    printf("Column: ");
+    scanf("%d", &c);
+
+    printf("Height: ");
+    scanf("%d", &h);
+
+    printf("Width: ");
+    scanf("%d", &w);
+
+    drawRectangle(canvas, r, c, h, w);
+}
+
+        
         else if(choice == 2)
         {
             fillRectangle(canvas, 2, 5, 5, 10);
         }
         else if(choice == 3)
-        {
-            display(canvas);
-        }
-        else if(choice == 4)
-        {
-            break;
-        }
+{
+    int r, c, h;
+
+    printf("Row: ");
+    scanf("%d", &r);
+
+    printf("Column: ");
+    scanf("%d", &c);
+
+    printf("Height: ");
+    scanf("%d", &h);
+
+    drawTriangle(canvas, r, c, h);
+}
+else if(choice == 4)
+{
+    display(canvas);
+}
+else if(choice == 5)
+{
+    break;
+}
     }
+    
+
+        
 
     return 0;
 }
