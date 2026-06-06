@@ -83,6 +83,17 @@ void display(char canvas[ROWS][COLS])
     }
 }
 
+void eraseRectangle(char canvas[ROWS][COLS], int r, int c, int h, int w)
+{
+    for(int i = r; i < r + h; i++)
+    {
+        for(int j = c; j < c + w; j++)
+        {
+            canvas[i][j] = '_';
+        }
+    }
+}
+
 
 int main()
 {
@@ -96,8 +107,11 @@ int main()
         printf("\n1. Draw Rectangle\n");
         printf("2. Fill Rectangle\n");
         printf("3. Draw Triangle\n");
-        printf("4. Display Canvas\n");
-        printf("5. Exit\n");
+        printf("4. Draw Horizontal Line\n");
+        printf("5. Draw Vertical Line\n");
+        printf("6. Delete Rectangle\n");
+        printf("7. Display Canvas\n");
+        printf("8. Exit\n");
 
         printf("Enter choice: ");
         scanf("%d", &choice);
@@ -141,11 +155,60 @@ int main()
 
     drawTriangle(canvas, r, c, h);
 }
+
 else if(choice == 4)
+{
+    int row, start, end;
+
+    printf("Row: ");
+    scanf("%d", &row);
+
+    printf("Start Column: ");
+    scanf("%d", &start);
+
+    printf("End Column: ");
+    scanf("%d", &end);
+
+    drawHLine(canvas, row, start, end);
+}
+else if(choice == 5)
+{
+    int col, start, end;
+
+    printf("Column: ");
+    scanf("%d", &col);
+
+    printf("Start Row: ");
+    scanf("%d", &start);
+
+    printf("End Row: ");
+    scanf("%d", &end);
+
+    drawVLine(canvas, col, start, end);
+}
+else if(choice == 6)
+{
+    int r, c, h, w;
+
+    printf("Row: ");
+    scanf("%d", &r);
+
+    printf("Column: ");
+    scanf("%d", &c);
+
+    printf("Height: ");
+    scanf("%d", &h);
+
+    printf("Width: ");
+    scanf("%d", &w);
+
+    eraseRectangle(canvas, r, c, h, w);
+}
+else if(choice == 7)
 {
     display(canvas);
 }
-else if(choice == 5)
+else if(choice == 8)
 {
     break;
 }
