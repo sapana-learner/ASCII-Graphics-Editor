@@ -1,0 +1,29 @@
+The Prompts that i have used while building 2D Graphics projects are:
+
+
+I want to build a menu-driven Drawing Canvas project in C from scratch. Guide me step by step and explain the logic behind everything instead of directly giving the full solution.
+
+Requirements:
+
+1. Create a 10×20 canvas using a 2D character array.
+2. Initialize the canvas with '_' characters.
+3. Create a display() function to print the canvas.
+4. Create drawHLine() to draw a horizontal line using '*'.
+5. Create drawVLine() to draw a vertical line using '*'.
+6. Create drawRectangle() to draw only the rectangle border.
+7. Create fillRectangle() to draw a filled rectangle.
+8. Create drawTriangle() to draw a right-angled triangle using nested loops.
+9. Create drawCircle() to draw a simple circle pattern around a center point.
+10. Create eraseRectangle() to remove a rectangle by replacing it with '_'.
+11. Add proper boundary checking so shapes cannot go outside the canvas.
+12. Add validation for invalid dimensions and coordinates.
+13. Create a menu-driven program using a while loop and switch-case.
+14. Allow the user to choose operations from the menu.
+15. Add a Modify Rectangle feature that erases an old rectangle and draws a new rectangle.
+16. Explain every function, loop, condition, and validation used.
+17. Show the code incrementally, one feature at a time.
+18. After each feature, explain how it works and why it is needed.
+19. Give test cases for every function.
+20. At the end, provide common viva questions and answers related to arrays, functions, loops, validation, and shape drawing.
+
+Do not skip explanations. Teach me as if I am a second-semester B.Tech C programming student doing C project using VS CODE and GitHub.
